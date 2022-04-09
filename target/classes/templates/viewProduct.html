@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+      <!--  <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+   <!--  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    
+    <!-- new changes -->
+    
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop</title>
+	 <!-- <link rel="stylesheet"  th:href="@{/css/style.css}"> -->
+    
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" th:href="@{/css/all.min.css}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+	<!-- animate css -->
+	<link rel="stylesheet" th:href="@{/css/animate.css}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+	<!-- main style -->
+	<link rel="stylesheet" th:href="@{/css/main.css}">
+	<!-- responsive -->
+	<link rel="stylesheet" th:href="@{/css/responsive.css}">
+    
+</head>
+<body>
+
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="40"
+                 class="d-inline-block align-top" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}" href="#">home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/shop}" href="#">shop</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="#">login</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">logout</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/report}" href="#">fav</a>
+                </li>
+                <li class="nav-item active">
+                    <span class="nav-link" th:text="${reportCount}"></span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav> -->
+
+
+
+
+<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html">
+								<a href="#"  style=" font-size: 2rem;font-weight: bolder;  color:#fff;  text-transform: uppercase;"><span style=" color:var(--orange);">Explore</span>City</a>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="#" th:href="@{/}">Home</a></li>
+								<li><a th:href="@{/shop}" href="#">Services</a>	</li>
+								<li><a th:href=@{/newsAll}>News</a></li>
+								<li><a th:href=@{/about}>About</a></li>
+								<li><a th:href=@{/contact}>Contact</a></li>
+	
+							   <li><div sec:authorize="hasRole('ADMIN')"><a  id="login-btn" th:href="@{/admin}" href="#" ><span>CMS - admin</span></a></div></li>
+								
+								<li class="nav-item active"><a class="nav-link"
+									sec:authorize="isAnonymous()" th:href="@{/login}" href="#">login</a>
+								</li>
+								<li class="nav-item active"><a class="nav-link"
+									sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">logout &nbsp &nbsp &nbsp<span class="fas fa-user" > - </span> <!-- <span sec:authentication="principal.firstName" style="color: white; " ></span> -->  </a>
+								</li>
+								
+							</ul>
+						</nav>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+<!-- new nav end -->
+
+
+
+
+
+
+<!-- search area -->
+	<div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end search arewa -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p><h1>Service Details</h1></p>
+						<!-- <h1>Service</h1> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	
+		
+	
+		<!-- <div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-5 d-flex justify-content-center">
+            <img class="mt-5" height="300px" width="300px" src="" th:src="@{${'/productImages/' + product.imageName}}"
+                 alt="">
+        </div>
+        <div class="col-sm-7 mt-5">
+            <h2 th:text="${product.name}"></h2>
+            <p th:text="${product.category.name}"></p>
+            <h3 th:text="${product.contactNumber}"></h3>
+            <h3 th:text="${product.email}"></h3>
+            
+            <p th:utext="${product.detailDescription}"></p>
+            <a href="" th:href="@{/addToReport/{id}(id = ${product.id})}" class="btn btn-primary">add to fav</a>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img">
+						<img th:src="@{${'/productImages/' + product.imageName}}" alt="">
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="single-product-content">
+						<h3 th:text="${product.name}"></h3>
+						<p class="single-product-pricing" th:text="${product.category.name}"></p>
+						<h3 th:text="${product.contactNumber}"></h3>
+						<h3 th:text="${product.email}"></h3>
+						<p th:utext="${product.detailDescription}"></p>
+						<div class="single-product-form">
+							
+							<a href="" th:href="@{/addToReport/{id}(id = ${product.id})}"  class="report-btn"> report</a>
+							<p><strong>Category: </strong><span th:text="${product.category.name}"></span></p>
+						</div>
+						<h4>Share:</h4>
+						<ul class="product-share">
+							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href=""><i class="fab fa-twitter"></i></a></li>
+							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	
+
+		
+		<!-- more products -->
+	<div class="more-products mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Related</span> Services</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row" >
+				<!-- <div class="col-lg-4 col-md-6 text-center"  th:each="product : ${products}">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img height="150px"
+								width="150px"
+								th:src="@{${'/productImages/' + product.imageName}}"
+								th:alt="${product.name}" alt=""></a>
+						</div>
+						<h3 th:text="${product.name}"></h3>
+						<p class="product-price"><span th:text="${product.introDescription}"></span>  </p>
+						<a  th:href="@{/shop/viewproduct/{id}(id=${product.id})}" class="report-btn">view</a>
+					</div>
+				</div> -->
+				
+				<!-- <div class="col-lg-4 col-md-6 text-center" >
+				<div th:each="product : ${products}"></div>
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img height="150px"
+								width="150px"
+								th:src="@{${'/productImages/' + product.imageName}}"
+								th:alt="${product.name}" alt=""></a>
+						</div>
+						<h3 th:text="${product.name}"></h3>
+						<p class="product-price"><span>Per Kg</span> 85$ </p>
+						<a href="report.html" class="report-btn"><i class="fas fa-shopping-report"></i> Add to Report</a>
+					</div>
+				</div> -->
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- end more products -->
+		
+		
+
+		
+
+			<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>City Explorer provides a convenient platform for users to inquire about services catered and filtered based on city and category choice.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>26/5  shivaji nagar , Pune</li>
+							
+							<li>+91 986523826</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a th:href="@{/}">Home</a></li>
+							<li><a th:href="@{/about}">About</a></li>
+							<li><a th:href="@{/shop}">Shop</a></li>
+							<li><a th:href="@{/newsAll}">News</a></li>
+							<li><a th:href="@{/contact}">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2022 - <a href="https://github.com/RiteshJadhav21">Ritesh Jadhav | Yash Gupta</a>,  All Rights Reserved.<br>
+						Distributed By - <a href="https://github.com/RiteshJadhav21">Github</a>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+								
+
+
+<!-- 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-5 d-flex justify-content-center">
+            <img class="mt-5" height="300px" width="300px" src="" th:src="@{${'/productImages/' + product.imageName}}"
+                 alt="">
+        </div>
+        <div class="col-sm-7 mt-5">
+            <h2 th:text="${product.name}"></h2>
+            <p th:text="${product.category.name}"></p>
+            <h3 th:text="${product.contactNumber}"></h3>
+            <h3 th:text="${product.email}"></h3>
+            <h2>₹ <span th:text="${product.price}"></span></h2>
+            <h5>Weight:
+                <spna th:text="${product.weight}"></spna> grams.
+            </h5>
+            <p th:utext="${product.detailDescription}"></p>
+            <a href="" th:href="@{/addToReport/{id}(id = ${product.id})}" class="btn btn-primary">add to fav</a>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- jquery -->
+		<script src="/js/jquery-1.11.3.min.js"></script>
+		<!-- bootstrap -->
+		<script src="css/bootstrap/js1/bootstrap.min.js"></script>
+		<!-- count down -->
+		<script src="/js/jquery.countdown.js"></script>
+		<!-- isotope -->
+		<script src="/js/jquery.isotope-3.0.6.min.js"></script>
+		<!-- waypoints -->
+		<script src="/js/waypoints.js"></script>
+		<!-- owl carousel -->
+		<script src="/js/owl.carousel.min.js"></script>
+		<!-- magnific popup -->
+		<script src="/js/jquery.magnific-popup.min.js"></script>
+		<!-- mean menu -->
+		<script src="/js/jquery.meanmenu.min.js"></script>
+		<!-- sticker js -->
+		<script src="/js/sticker.js"></script>
+		<!-- main js -->
+		<script src="/js/main.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
