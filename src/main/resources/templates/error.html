@@ -1,0 +1,313 @@
+<!-- <!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org./1999/xhtml">
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    
+    new changes
+    
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	title
+	<title>Shop</title>
+	 <link rel="stylesheet"  th:href="@{/css/style.css}">
+    
+	favicon
+	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+	google font
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	fontawesome
+	<link rel="stylesheet" th:href="@{/css/all.min.css}">
+	bootstrap
+	<link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}">
+	owl carousel
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+	magnific popup
+	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+	animate css
+	<link rel="stylesheet" th:href="@{/css/animate.css}">
+	mean menu css
+	<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+	main style
+	<link rel="stylesheet" th:href="@{/css/main.css}">
+	responsive
+	<link rel="stylesheet" th:href="@{/css/responsive.css}">
+	
+	<style>
+
+div:hover {
+  background-color: lightgrey;
+}
+body {
+/*  background-image: url("/images/error.jpg"); */
+/*  background-color:grey; */
+}
+</style>
+
+ </head>
+
+<body>
+
+<div class="text-center">
+  <h3>Something went wrong!</h3>
+  <a href="/" class="btn btn-primary btn-lg my-3">Go Home</a>
+  </div>
+  <br/>
+  <div class="text-center">
+  <h4><b>403:</b> Access denied , to gain access please login with respective role </h4>
+  <a href="/login" class="btn btn-primary btn-lg my-3">login</a>
+  </div>
+   <br/>
+   <div class="text-center" >
+  <h4><b>404:</b> No such page exists , please check URL </h4>
+  </div>
+
+
+
+
+<div style="align-items: center;">
+
+<table  style="width: 30%; margin-left: 5%; margin-top: 10%">
+    <tr><td><h4>Error Report</h4></td></tr>
+    <tr>
+        <td>Error :</td>
+        <td th:text="${error}"/>
+    </tr>
+    <tr>
+        <td>Status :</td>
+        <td th:text="${status}"/>
+    </tr>
+    <tr>
+        <td>Path :</td>
+        <td th:text="${path}"/>
+    </tr>
+    <tr>
+        <td>Date :</td>
+        <td th:text="${timestamp}"/>
+    </tr>
+    <tr>
+        <td>Message :</td>
+        <td th:text="${message}"/>
+    </tr>  
+</table>
+</div>
+
+<div th:replace="common/header :: body-scripts"> </div>
+
+
+
+
+</body>
+</html>
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+    <link rel="stylesheet"  th:href="@{/css/styles.css}">
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    
+    
+    
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop</title>
+	
+    
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" th:href="@{/css/all.min.css}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap/css/bootstrap.min.css}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+	<!-- animate css -->
+	<link rel="stylesheet" th:href="@{/css/animate.css}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+	<!-- main style -->
+	<link rel="stylesheet" th:href="@{/css/main.css}">
+	<!-- responsive -->
+	<link rel="stylesheet" th:href="@{/css/responsive.css}">
+    
+    
+</head>
+<body>
+	
+	<!--PreLoader-->
+   <!--  <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div> -->
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker" style="background-color: #051922">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html">
+								<img src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="#" th:href=@{/}>Home</a></li>
+								<li><a th:href=@{/about}>About</a></li>
+								<li><a th:href=@{/newsAll}>News</a></li>					
+								<li><a th:href=@{/contact}>Contact</a></li>
+								<li><a  th:href=@{/shop}>Shop</a>	</li>
+								<li></li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+
+		
+	
+		<!-- error section -->
+		<div class="full-height-section error-section">
+			<div class="full-height-tablecell">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2 text-center">
+							<div class="error-text">
+								<i class="far fa-sad-cry"></i>
+								<h1>Oops! Something went wrong</h1>
+								<p><b>404 : </b>The page you requested for is not found.</p>
+								<p><b>403 : </b>Seems like you are trying to access restricted page</p>
+								<a  th:href=@{/} class="boxed-btn">Back to Home</a> &nbsp
+								<a  th:href=@{/login} class="boxed-btn">Authorized Login </a>
+								<br>
+								<br>
+								<div class="btn-group" style="width: 325px">
+  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+   Error Report
+  </button>
+  <div class="dropdown-menu">
+    <!-- Dropdown menu links -->
+    <table >
+
+        <td>Error :</td>
+        <td th:text="${error}"/>
+    </tr>
+    <tr>
+        <td>Status :</td>
+        <td th:text="${status}"/>
+    </tr>
+    <tr>
+        <td>Path :</td>
+        <td th:text="${path}"/>
+    </tr>
+    <tr>
+        <td>Date :</td>
+        <td th:text="${timestamp}"/>
+    </tr>
+    <tr>
+        <td>Message :</td>
+        <td th:text="${message}"/>
+    </tr>  
+</table>
+  </div>
+</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end error section -->
+		
+		
+
+	
+	
+		<!-- jquery -->
+		<script src="/js/jquery-1.11.3.min.js"></script>
+		<!-- bootstrap -->
+		<script src="css/bootstrap/js1/bootstrap.min.js"></script>
+		<!-- count down -->
+		<script src="/js/jquery.countdown.js"></script>
+		<!-- isotope -->
+		<script src="/js/jquery.isotope-3.0.6.min.js"></script>
+		<!-- waypoints -->
+		<script src="/js/waypoints.js"></script>
+		<!-- owl carousel -->
+		<script src="/js/owl.carousel.min.js"></script>
+		<!-- magnific popup -->
+		<script src="/js/jquery.magnific-popup.min.js"></script>
+		<!-- mean menu -->
+		<script src="/js/jquery.meanmenu.min.js"></script>
+		<!-- sticker js -->
+		<script src="/js/sticker.js"></script>
+		<!-- main js -->
+		<script src="/js/main.js"></script>
+
+
+
+			
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	
+</body>
+</html>
+ 
+ 
+ 
